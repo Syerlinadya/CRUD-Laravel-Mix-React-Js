@@ -23,6 +23,12 @@ const Navbar = () => {
                         </ul>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="d-flex form-inputs"> 
+                        <input class="form-control mr-sm-2" type="text" placeholder="Cari..."/> 
+                        <button className="btn btn-default text-light " type="submit">Cari</button>
+                    </div>
+                </div>
             </nav>
         </div>
     )

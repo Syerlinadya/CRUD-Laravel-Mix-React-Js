@@ -36,7 +36,7 @@ const Index = () => {
     return (
         <div className="container">
             <div className="row justify-content-center">
-                <div className="col">
+                <div className="col-md-10">
                     <div className="card">
                         <div className="card-body">
                             <button className="btn btn-success p-0 mb-2">

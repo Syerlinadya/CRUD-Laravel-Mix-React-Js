@@ -38,54 +38,68 @@ const CreateSiswa = () => {
         })
     }
 
+    const handleCancel = () => {
+        window.location = '/siswa';
+    }
     return (
-        <div className="container">
-            <div className="col">
-                <div className="card">
-                    <div className="card-body">
-                        <form onSubmit={saveSiswa}>
-                            <h1>Tambah Data Siswa</h1>
-                            <div className="mb-3">
-                                <label className="form-label">NIS</label>
-                                <input type="text" className="form-control" placeholder="NIS.."
-                                    onChange= {(e )=> setNis(e.target.value)}
-                                    value= {nis}
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label className="form-label">Nama Siswa</label>
-                                <input type="text" className="form-control" placeholder="Nama siswa"  
-                                    onChange= {(e) => setNamaSiswa(e.target.value)}
-                                    value= {nama_siswa}
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label className="form-label">Tanggal Lahir</label>
-                                <input type="date" className="form-control" placeholder="Tanggal Lahir" 
-                                    onChange= {(e) => setTglLahir(e.target.value)}
-                                    value= {tgl_lahir}
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label className="form-label">ID Sekolah</label>
-                                {/* <input type="number" className="form-control" placeholder="ID sekolah" 
-                                    onChange= {(e) => setSekolahId(e.target.value)}
-                                    value= {sekolah_id}
-                                /> */}
-                                <select className="form-control" data-val="true" name="sekolah_id" value={sekolah_id} onChange={(e) => setSekolahId(e.target.value)}>
-                                    <option value="">-- Pilih Id Sekolah --</option>
-                                    {data.map((item) =>
-                                        <option key={item.id} value={item.id}>{item.nama}</option>
-                                    )}
-                                </select>
-                            </div>
-                            <button type="submit" className="btn btn-info mb-1 btn-block">
-                                Simpan
-                            </button>
-                        </form>
+        <div className="container justify-content-center">
+            <div className="row justify-content-center">
+                <div className="col-md-5">
+                    <div className="card">
+                        <div className="card-body">
+                            <form onSubmit={saveSiswa}>
+                                <h1>Tambah Data Siswa</h1>
+                                <div className="mb-3">
+                                    <label className="form-label">NIS</label>
+                                    <input type="text" className="form-control" placeholder="NIS.."
+                                        onChange= {(e )=> setNis(e.target.value)}
+                                        value= {nis}
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label className="form-label">Nama Siswa</label>
+                                    <input type="text" className="form-control" placeholder="Nama siswa"  
+                                        onChange= {(e) => setNamaSiswa(e.target.value)}
+                                        value= {nama_siswa}
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label className="form-label">Tanggal Lahir</label>
+                                    <input type="date" className="form-control" placeholder="Tanggal Lahir" 
+                                        onChange= {(e) => setTglLahir(e.target.value)}
+                                        value= {tgl_lahir}
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label className="form-label">ID Sekolah</label>
+                                    {/* <input type="number" className="form-control" placeholder="ID sekolah" 
+                                        onChange= {(e) => setSekolahId(e.target.value)}
+                                        value= {sekolah_id}
+                                    /> */}
+                                    <select className="form-control" data-val="true" name="sekolah_id" value={sekolah_id} onChange={(e) => setSekolahId(e.target.value)}>
+                                        <option value="">-- Pilih Id Sekolah --</option>
+                                        {data.map((item) =>
+                                            <option key={item.id} value={item.id}>{item.nama}</option>
+                                        )}
+                                    </select>
+                                </div>
+                                <div className="row justify-content-center">
+                                    <div className="col-4">
+                                        <button type="submit" className="btn btn-success mb-1 btn-block">
+                                            Simpan
+                                        </button>
+                                    </div>
+                                    <div className="col-4">
+                                        <button type="submit" className="btn btn-light mb-1 btn-block" onClick={handleCancel}>
+                                            cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            </div> 
+                </div> 
+            </div>
         </div>
     )
 }
